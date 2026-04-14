@@ -208,6 +208,10 @@ The [InvokeBrowser API](https://docs.aws.amazon.com/bedrock-agentcore/latest/dev
 
 This is useful for interacting with native OS dialogs, print prompts, right-click menus, and anything outside the browser DOM.
 
+Here's an actual screenshot captured by AgentCore Browser's OS-level `screenshot` action during the demo — it navigated to this project's GitHub repo:
+
+![AgentCore Browser Screenshot](docs/images/agentcore-browser-screenshot.png)
+
 ### OpenTelemetry → Dynatrace
 
 Dynatrace natively supports OTLP trace ingestion. The `otel_setup.py` module configures:
