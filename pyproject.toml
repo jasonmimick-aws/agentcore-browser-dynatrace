@@ -1,0 +1,21 @@
+[project]
+name = "agentcore-browser-dynatrace"
+version = "0.1.0"
+description = "Getting started: AgentCore Browser + Dynatrace OTLP observability"
+requires-python = ">=3.10"
+dependencies = [
+    "strands-agents",
+    "strands-agents-tools",
+    "bedrock-agentcore",
+    "playwright",
+    "boto3",
+    "nest-asyncio",
+    "opentelemetry-api",
+    "opentelemetry-sdk",
+    "opentelemetry-exporter-otlp-proto-http",
+    "python-dotenv",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
