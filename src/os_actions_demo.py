@@ -26,13 +26,15 @@ def invoke_action(client, session_id: str, action: dict) -> dict:
     )
 
 
-def save_screenshot(data_b64: str, label: str) -> str:
-    """Decode and save a base64 screenshot, return the file path."""
+def save_screenshot(data: bytes, label: str) -> str:
+    """Save screenshot bytes, return the file path."""
     os.makedirs(SCREENSHOT_DIR, exist_ok=True)
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
     path = os.path.join(SCREENSHOT_DIR, f"{label}_{ts}.png")
+    # boto3 returns raw bytes (already decoded from base64)
+    raw = data if isinstance(data, bytes) else base64.b64decode(data)
     with open(path, "wb") as f:
-        f.write(base64.b64decode(data_b64))
+        f.write(raw)
     return path
 
 
