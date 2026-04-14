@@ -26,26 +26,7 @@ By instrumenting with OpenTelemetry and exporting to Dynatrace, you get:
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────┐
-│  Your Machine                                           │
-│                                                         │
-│  ┌──────────────────────┐    OTLP/HTTP     ┌─────────┐ │
-│  │  Python Agent        │ ───────────────→  │Dynatrace│ │
-│  │  (Strands + OTel)    │    traces         │  OTLP   │ │
-│  └──────┬───────────────┘                   └─────────┘ │
-│         │                                               │
-│         │ CDP WebSocket + InvokeBrowser REST             │
-│         ▼                                               │
-│  ┌──────────────────────┐                               │
-│  │  AgentCore Browser   │  (managed Chrome in AWS)      │
-│  │  ┌────────┐ ┌──────┐ │                               │
-│  │  │  CDP   │ │  OS  │ │                               │
-│  │  │Actions │ │Actions│ │                               │
-│  │  └────────┘ └──────┘ │                               │
-│  └──────────────────────┘                               │
-└─────────────────────────────────────────────────────────┘
-```
+![Architecture Diagram](docs/images/architecture-diagram.png)
 
 **Data flow:**
 - Python agent creates OTel spans for each action (navigate, click, screenshot, etc.)
