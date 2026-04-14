@@ -133,10 +133,9 @@ After running either demo, open your Dynatrace environment and navigate to **Dis
 
 ### Strands Agent Trace
 
-```
-browser-agent-session (parent)
-  └── agent-invoke
-```
+![Strands Agent Trace in Dynatrace](docs/images/dynatrace-strands-agent-trace.png)
+
+The trace shows the full agent reasoning loop — LLM calls, browser tool executions, and event loop cycles — all nested under the parent `browser-agent-session` span. Strands automatically adds its own OTel instrumentation, so you get rich detail including the model used (`us.anthropic.claude-sonnet-...`) and token timing.
 
 Span attributes include:
 - `agent.prompt` — the prompt sent to the agent
@@ -145,6 +144,10 @@ Span attributes include:
 - `response_preview` event — first 500 chars of the response
 
 ### OS Actions Trace
+
+![OS Actions Trace in Dynatrace](docs/images/dynatrace-os-actions-trace.png)
+
+Each OS-level action gets its own span, making it easy to see exactly what the agent did and how long each action took.
 
 ```
 os-actions-session (parent)
