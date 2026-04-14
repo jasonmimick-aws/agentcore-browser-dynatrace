@@ -58,7 +58,7 @@ def main():
                 async with async_playwright() as pw:
                     browser = await pw.chromium.connect_over_cdp(ws_url, headers=headers)
                     page = browser.contexts[0].pages[0]
-                    await page.goto("https://aws.amazon.com/bedrock/agentcore/")
+                    await page.goto("https://github.com/jasonmimick-aws/agentcore-browser-dynatrace")
                     await asyncio.sleep(3)
                     title = await page.title()
                     return title
