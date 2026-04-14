@@ -100,7 +100,7 @@ When you run this, the agent creates a browser session, navigates to the page, r
 
 ### What it looks like in Dynatrace
 
-![Strands Agent Trace in Dynatrace](docs/images/dynatrace-strands-agent-trace.png)
+![Strands Agent Trace in Dynatrace](https://raw.githubusercontent.com/jasonmimick-aws/agentcore-browser-dynatrace/main/docs/images/dynatrace-strands-agent-trace.png)
 
 The trace shows 17 spans over 44 seconds. You can see the repeating pattern: `chat` (LLM call) → `execute_tool browser` → `execute_event_loop_cycle` — the agent reasoning loop. Span attributes show the model (`us.anthropic.claude-sonnet-...`), token timing, and the Strands agent system.
 
@@ -150,7 +150,7 @@ This is a full desktop capture, not just the browser viewport. That's the key di
 
 ### The trace in Dynatrace
 
-![OS Actions Trace in Dynatrace](docs/images/dynatrace-os-actions-trace.png)
+![OS Actions Trace in Dynatrace](https://raw.githubusercontent.com/jasonmimick-aws/agentcore-browser-dynatrace/main/docs/images/dynatrace-os-actions-trace.png)
 
 Each OS action is a separate span with its own attributes:
 
