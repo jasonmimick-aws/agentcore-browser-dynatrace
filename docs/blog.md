@@ -35,7 +35,7 @@ Dynatrace natively supports [OpenTelemetry trace ingestion via OTLP](https://doc
 
 ## The Architecture
 
-![Architecture Diagram](docs/images/architecture-diagram.png)
+<p align="center"><img src="images/architecture-diagram.png" width="60%"></p>
 
 The Python agent creates OTel spans for each action. Spans are exported via OTLP/HTTP to Dynatrace. AgentCore Browser runs in AWS — your agent connects via CDP for standard automation and via REST for OS-level actions.
 

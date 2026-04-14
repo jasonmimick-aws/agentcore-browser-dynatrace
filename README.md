@@ -26,7 +26,7 @@ By instrumenting with OpenTelemetry and exporting to Dynatrace, you get:
 
 ## Architecture
 
-![Architecture Diagram](docs/images/architecture-diagram.png)
+<p align="center"><img src="docs/images/architecture-diagram.png" width="60%"></p>
 
 **Data flow:**
 - Python agent creates OTel spans for each action (navigate, click, screenshot, etc.)
